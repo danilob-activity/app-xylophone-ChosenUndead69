@@ -27,20 +27,50 @@ public class MainActivity extends AppCompatActivity {
     private int mASoundId;
     private int mBSoundId;
 
+    private SoundPool mSoundPool;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // TODO: Create a new SoundPool
-
+        mSoundPool = new SoundPool(NR_OF_SIMULTANEOUS_SOUNDS, AudioManager.STREAM_MUSIC, 1);
 
         // TODO: Load and get the IDs to identify the sounds
 
+        mCSoundId = mSoundPool.load(getApplicationContext(), R.raw.note1_c, 1);
+        mDSoundId = mSoundPool.load(getApplicationContext(), R.raw.note2_d, 2);
+        mESoundId = mSoundPool.load(getApplicationContext(), R.raw.note3_e, 3);
+        mFSoundId = mSoundPool.load(getApplicationContext(), R.raw.note4_f, 4);
+        mGSoundId = mSoundPool.load(getApplicationContext(), R.raw.note5_g, 5);
+        mASoundId = mSoundPool.load(getApplicationContext(), R.raw.note6_a, 6);
+        mBSoundId = mSoundPool.load(getApplicationContext(), R.raw.note7_b, 7);
 
     }
 
     // TODO: Add the play methods triggered by the buttons
+    public void playC(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+    public void playD(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+    public void playE(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+    public void playF(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+    public void playG(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+    public void playA(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }public void playB(View view){
+        mSoundPool.play(mASoundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, NO_LOOP, NORMAL_PLAY_RATE);
+    }
+
 
 
 
